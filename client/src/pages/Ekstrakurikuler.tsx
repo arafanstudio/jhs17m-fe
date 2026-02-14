@@ -61,7 +61,7 @@ export default function Ekstrakurikuler() {
         {/* Content */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="mb-16">
+            <div className="mb-16 gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Program Ekstrakurikuler Kami</h2>
               <p className="text-gray-600 text-lg">
                 Kami menyediakan berbagai kegiatan ekstrakurikuler untuk mengembangkan potensi siswa di bidang olahraga, seni, teknologi, dan kepemimpinan. Setiap siswa didorong untuk mengikuti minimal satu kegiatan ekstrakurikuler.
@@ -69,7 +69,7 @@ export default function Ekstrakurikuler() {
             </div>
 
             {/* Activities Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 gsap-reveal">
               {activities.map((activity, index) => (
                 <div
                   key={index}
@@ -83,7 +83,7 @@ export default function Ekstrakurikuler() {
             </div>
 
             {/* Benefits */}
-            <div className="bg-blue-50 p-8 rounded-xl mb-16">
+            <div className="bg-blue-50 p-8 rounded-xl mb-16 gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Manfaat Mengikuti Ekstrakurikuler</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
@@ -95,7 +95,7 @@ export default function Ekstrakurikuler() {
                   "Mengikuti kompetisi tingkat nasional dan internasional",
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start gap-4">
-                    <div className="text-2xl">✓</div>
+                    <div className="text-2xl text-blue-600">✓</div>
                     <p className="text-gray-700">{benefit}</p>
                   </div>
                 ))}
@@ -103,7 +103,7 @@ export default function Ekstrakurikuler() {
             </div>
 
             {/* Jadwal */}
-            <div className="bg-white border border-gray-200 p-8 rounded-xl">
+            <div className="bg-white border border-gray-200 p-8 rounded-xl gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Jadwal Kegiatan</h2>
               <div className="overflow-x-auto">
                 <table className="w-full">

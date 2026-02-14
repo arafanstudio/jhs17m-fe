@@ -56,7 +56,7 @@ export default function Akademik() {
           <div className="container mx-auto px-4">
             {/* Programs */}
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Jenjang Pendidikan</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 gsap-reveal">
               {programs.map((program, index) => (
                 <div
                   key={index}
@@ -70,7 +70,7 @@ export default function Akademik() {
             </div>
 
             {/* Subjects */}
-            <div className="bg-gray-50 p-8 rounded-xl mb-16">
+            <div className="bg-gray-50 p-8 rounded-xl mb-16 gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Mata Pelajaran</h2>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {subjects.map((subject, index) => (
@@ -86,7 +86,7 @@ export default function Akademik() {
 
             {/* Teaching Methods */}
             <h2 className="text-3xl font-bold text-gray-800 mb-8">Metode Pembelajaran</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 gsap-reveal">
               {[
                 {
                   icon: "👥",

@@ -81,7 +81,7 @@ export default function Fasilitas() {
         {/* Content */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="mb-16">
+            <div className="mb-16 gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Fasilitas Lengkap untuk Pembelajaran Optimal</h2>
               <p className="text-gray-600 text-lg">
                 Sekolah Kami dilengkapi dengan berbagai fasilitas modern yang dirancang untuk mendukung proses pembelajaran yang efektif dan nyaman bagi semua siswa.
@@ -89,7 +89,7 @@ export default function Fasilitas() {
             </div>
 
             {/* Facilities Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 gsap-reveal">
               {facilities.map((facility, index) => (
                 <div
                   key={index}
@@ -103,7 +103,7 @@ export default function Fasilitas() {
             </div>
 
             {/* Highlights */}
-            <div className="bg-gradient-to-r from-blue-50 to-white p-8 rounded-xl border border-blue-100 mb-16">
+            <div className="bg-gradient-to-r from-blue-50 to-white p-8 rounded-xl border border-blue-100 mb-16 gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Keunggulan Fasilitas Kami</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
@@ -133,7 +133,7 @@ export default function Fasilitas() {
             </div>
 
             {/* Virtual Tour */}
-            <div className="bg-white border border-gray-200 p-8 rounded-xl text-center">
+            <div className="bg-white border border-gray-200 p-8 rounded-xl text-center gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Ingin Melihat Fasilitas Kami?</h2>
               <p className="text-gray-600 mb-6">
                 Kunjungi sekolah kami secara langsung untuk melihat semua fasilitas yang kami tawarkan.

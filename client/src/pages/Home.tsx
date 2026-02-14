@@ -28,116 +28,96 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="flex-grow">
-        {/* Hero Section with Blur Background */}
-        <section className="relative w-full overflow-hidden">
+        {/* Hero Section with Blur Background - Modified to h-screen */}
+        <section className="relative w-full h-screen overflow-hidden">
           {/* Blurred Background Carousel */}
           <div className="absolute inset-0">
             <HeroImageCarousel isBlurred />
           </div>
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 bg-black/40"></div>
 
           {/* Content */}
-          <div className="relative z-10 py-20">
+          <div className="relative z-10 h-full flex items-center">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
-                <div>
+                <div className="gsap-hero-content">
                     <div className="flex items-center mb-4">
-	                    <h1 className="text-5xl font-bold text-white">
+	                    <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
 	                      Selamat Datang di Sekolah Kami
 	                    </h1>
 	                  </div>
-                  <p className="text-xl text-white mb-6">
+                  <p className="text-xl md:text-2xl text-white mb-8 opacity-90 max-w-2xl">
                     Membangun generasi masa depan yang cerdas, berkarakter, dan berwawasan global melalui pendidikan berkualitas.
                   </p>
-                  <div className="flex gap-4">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                  <div className="flex flex-wrap gap-4">
+                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg transition-all transform hover:scale-105">
                       Pelajari Lebih Lanjut
                     </button>
-                    <button className="border-2 border-blue-600 text-blue-600 bg-white hover:bg-gray-200 font-bold py-3 px-8 rounded-lg transition-colors">
+                    <button className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-600 font-bold py-4 px-10 rounded-lg transition-all transform hover:scale-105">
                       Hubungi Kami
                     </button>
                   </div>
                 </div>
 
                 {/* Right Image Carousel */}
-                <div className="hidden md:block w-full h-96 rounded-2xl shadow-2xl float-accent shadow-black overflow-hidden">
+                <div className="hidden md:block w-full h-[500px] rounded-2xl shadow-2xl float-accent shadow-black/50 overflow-hidden gsap-hero-image">
                   <HeroImageCarousel />
                 </div>
               </div>
             </div>
           </div>
+          
+          {/* Scroll Down Indicator */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
+            <div className="w-8 h-12 border-2 border-white rounded-full flex justify-center p-2">
+              <div className="w-1 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
         </section>
 
         {/* Media Esashaka Section */}
-        <MediaEsashaka />
+        <div className="gsap-reveal">
+          <MediaEsashaka />
+        </div>
 
         {/* Kenapa Harus SMPN 17 Section */}
-        <WhySMPN17 />
+        <div className="gsap-reveal">
+          <WhySMPN17 />
+        </div>
 
         {/* Sambutan Kepala Sekolah Section */}
-        <HeadmasterSection />
+        <div className="gsap-reveal">
+          <HeadmasterSection />
+        </div>
 
         {/* Fasilitas Sekolah Section */}
-        <FacilitySection />
+        <div className="gsap-reveal">
+          <FacilitySection />
+        </div>
 
         {/* Prestasi & Penghargaan Section */}
-        <AwardSection />
+        <div className="gsap-reveal">
+          <AwardSection />
+        </div>
 
         {/* Kegiatan - Kegiatan Section */}
-        <ActivitySection />
-
-        {/* Features Section */}
-        {/* <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-              Keunggulan Kami
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: "🎓",
-                  title: "Kurikulum Modern",
-                  description: "Kurikulum terkini yang disesuaikan dengan perkembangan zaman dan kebutuhan industri.",
-                },
-                {
-                  icon: "👨‍🏫",
-                  title: "Guru Berpengalaman",
-                  description: "Tim pengajar profesional dengan sertifikasi internasional dan dedikasi tinggi.",
-                },
-                {
-                  icon: "🏫",
-                  title: "Fasilitas Lengkap",
-                  description: "Sarana dan prasarana modern untuk mendukung proses pembelajaran yang optimal.",
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow"
-                >
-                  <div className="text-5xl mb-4">{feature.icon}</div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
+        <div className="gsap-reveal">
+          <ActivitySection />
+        </div>
 
         {/* Call to Action Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
+        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20 gsap-reveal">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Bergabunglah dengan Kami
             </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Jadilah bagian dari komunitas pembelajaran yang dinamis dan inovatif.
+            <p className="text-xl mb-10 opacity-90 max-w-3xl mx-auto">
+              Jadilah bagian dari komunitas pembelajaran yang dinamis dan inovatif untuk masa depan yang lebih gemilang.
             </p>
-            <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition-colors">
+            <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 text-lg">
               Daftar Sekarang
             </button>
           </div>

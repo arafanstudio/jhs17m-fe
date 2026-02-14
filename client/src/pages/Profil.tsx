@@ -18,7 +18,7 @@ export default function Profil() {
         {/* Content */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 gsap-reveal">
               <div>
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
                 <p className="text-gray-600 mb-4">
@@ -39,7 +39,7 @@ export default function Profil() {
             </div>
 
             {/* Mission & Vision */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 gsap-reveal">
               <div className="bg-blue-50 p-8 rounded-xl">
                 <h3 className="text-2xl font-bold text-blue-600 mb-4">Visi</h3>
                 <p className="text-gray-700">
@@ -61,7 +61,7 @@ export default function Profil() {
             </div>
 
             {/* Key Information */}
-            <div className="bg-gray-50 p-8 rounded-xl">
+            <div className="bg-gray-50 p-8 rounded-xl gsap-reveal">
               <h2 className="text-3xl font-bold text-gray-800 mb-8">Informasi Penting</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
