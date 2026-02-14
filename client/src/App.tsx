@@ -9,8 +9,6 @@ import Profil from "./pages/Profil";
 import Akademik from "./pages/Akademik";
 import Ekstrakurikuler from "./pages/Ekstrakurikuler";
 import Fasilitas from "./pages/Fasilitas";
-import Elearning from "./pages/Elearning";
-import Perpustakaan from "./pages/Perpustakaan";
 import AdminLogin from "./pages/AdminLogin";
 import ArticleCreation from "./pages/ArticleCreation";
 import ArticleDetail from "./pages/ArticleDetail";
@@ -34,8 +32,6 @@ function Router() {
       <Route path={"/akademik"} component={Akademik} />
       <Route path={"/ekstrakurikuler"} component={Ekstrakurikuler} />
       <Route path={"/fasilitas"} component={Fasilitas} />
-      <Route path={"/elearning"} component={Elearning} />
-      <Route path={"/perpustakaan"} component={Perpustakaan} />
       <Route path={"/admin/login"} component={AdminLogin} />
       <Route path={"/admin/create-article"} component={ArticleCreation} />
       <Route path={"/article/:id"} component={ArticleDetail} />

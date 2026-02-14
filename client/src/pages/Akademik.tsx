@@ -4,38 +4,33 @@ import Footer from "@/components/Footer";
 export default function Akademik() {
   const programs = [
     {
-      name: "Kelas 1-3 (SD)",
-      icon: "🎒",
-      description: "Fondasi pendidikan dasar dengan fokus pada literasi, numerasi, dan pengembangan karakter.",
+      name: "Kelas 7",
+      icon: "📘",
+      description: "Masa transisi dan pengenalan lingkungan sekolah menengah dengan fokus pada karakter dan dasar akademik.",
     },
     {
-      name: "Kelas 4-6 (SD)",
+      name: "Kelas 8",
       icon: "📖",
-      description: "Pendalaman materi akademik dengan pengenalan berbagai bidang ilmu pengetahuan.",
+      description: "Pengembangan kompetensi diri dan eksplorasi minat melalui berbagai mata pelajaran dan kegiatan.",
     },
     {
-      name: "Kelas 7-9 (SMP)",
-      icon: "🔬",
-      description: "Pembelajaran terpadu dengan metode sains dan teknologi yang modern.",
-    },
-    {
-      name: "Kelas 10-12 (SMA)",
+      name: "Kelas 9",
       icon: "🎓",
-      description: "Program peminatan dengan persiapan masuk perguruan tinggi terkemuka.",
+      description: "Persiapan matang untuk kelulusan dan pemantapan materi untuk jenjang pendidikan selanjutnya.",
     },
   ];
 
   const subjects = [
+    "Pendidikan Agama",
+    "Pendidikan Pancasila",
     "Bahasa Indonesia",
-    "Bahasa Inggris",
     "Matematika",
-    "Sains",
-    "Sejarah",
-    "Geografi",
-    "Pendidikan Jasmani",
-    "Seni Rupa",
-    "Seni Musik",
-    "Teknologi Informasi",
+    "IPA (Sains)",
+    "IPS (Sosial)",
+    "Bahasa Inggris",
+    "Seni Budaya",
+    "PJOK",
+    "Informatika",
   ];
 
   return (
@@ -47,7 +42,7 @@ export default function Akademik() {
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl font-bold">Program Akademik</h1>
-            <p className="text-blue-100 mt-2">Kurikulum modern untuk masa depan yang cerah</p>
+            <p className="text-blue-100 mt-2">Kurikulum Merdeka untuk Generasi Cerdas & Berkarakter</p>
           </div>
         </section>
 
@@ -55,8 +50,8 @@ export default function Akademik() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             {/* Programs */}
-            <h2 className="text-3xl font-bold text-gray-800 mb-8">Jenjang Pendidikan</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 gsap-reveal">
+            <h2 className="text-3xl font-bold text-gray-800 mb-8">Jenjang Pendidikan SMP</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 gsap-reveal">
               {programs.map((program, index) => (
                 <div
                   key={index}
@@ -71,7 +66,7 @@ export default function Akademik() {
 
             {/* Subjects */}
             <div className="bg-gray-50 p-8 rounded-xl mb-16 gsap-reveal">
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Mata Pelajaran</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-8">Mata Pelajaran Utama</h2>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {subjects.map((subject, index) => (
                   <div
@@ -91,17 +86,17 @@ export default function Akademik() {
                 {
                   icon: "👥",
                   title: "Pembelajaran Interaktif",
-                  description: "Metode diskusi dan kolaborasi untuk meningkatkan pemahaman siswa.",
+                  description: "Mendorong siswa aktif berdiskusi dan berkolaborasi dalam memecahkan masalah.",
                 },
                 {
                   icon: "🔬",
-                  title: "Pembelajaran Berbasis Proyek",
-                  description: "Siswa belajar melalui proyek nyata yang relevan dengan kehidupan sehari-hari.",
+                  title: "Berbasis Proyek (P5)",
+                  description: "Implementasi Projek Penguatan Profil Pelajar Pancasila untuk mengasah kreativitas.",
                 },
                 {
                   icon: "💻",
-                  title: "Teknologi Pendidikan",
-                  description: "Menggunakan teknologi terkini untuk mendukung proses pembelajaran.",
+                  title: "Literasi Digital",
+                  description: "Pemanfaatan teknologi informasi sebagai media pembelajaran yang modern dan efektif.",
                 },
               ].map((method, index) => (
                 <div
