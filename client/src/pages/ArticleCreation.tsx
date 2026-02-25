@@ -90,30 +90,8 @@ export default function ArticleCreation() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
-      {/* Header */}
-      {/* <header className="bg-white shadow-sm border-b border-gray-200 mb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-              <FileText className="text-white" size={24} />
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
-              <p className="text-sm text-gray-500">Create and manage articles</p>
-            </div>
-          </div>
-          <Button 
-            variant="outline" 
-            onClick={handleLogout}
-            className="flex items-center gap-2 border-gray-300 hover:bg-red-50 hover:border-red-300 hover:text-red-600"
-          >
-            <LogOut size={18} />
-            Logout
-          </Button>
-        </div>
-      </header> */}
-
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+  
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
         <Card className="shadow-lg border-0">
@@ -243,36 +221,6 @@ export default function ArticleCreation() {
           </CardContent>
         </Card>
 
-        {/* Info Section */}
-        {/* <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 pb-8">
-          <Card className="shadow-sm border-gray-200">
-            <CardContent className="pt-6 pb-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">📝</div>
-                <h3 className="font-semibold text-gray-800 mb-1">Rich Content</h3>
-                <p className="text-sm text-gray-600">Support for Markdown formatting and styling</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="shadow-sm border-gray-200">
-            <CardContent className="pt-6 pb-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">🖼️</div>
-                <h3 className="font-semibold text-gray-800 mb-1">Image Support</h3>
-                <p className="text-sm text-gray-600">Add featured images to your articles</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="shadow-sm border-gray-200">
-            <CardContent className="pt-6 pb-6">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">🏷️</div>
-                <h3 className="font-semibold text-gray-800 mb-1">Categories</h3>
-                <p className="text-sm text-gray-600">Organize articles by category</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div> */}
       </main>
     </div>
   );
