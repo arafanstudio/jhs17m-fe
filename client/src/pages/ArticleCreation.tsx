@@ -98,21 +98,21 @@ export default function ArticleCreation() {
           <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-8">
             <CardTitle className="text-2xl flex items-center gap-2">
               <FileText size={28} />
-              Create New Article
+              Tulis Artikel Baru
             </CardTitle>
-            <p className="text-blue-100 text-sm mt-3">Fill in the form below to create a new article</p>
+            <p className="text-blue-100 text-sm mt-3">Isi form dibawah untuk membuat artikel baru</p>
           </CardHeader>
           <CardContent className="pt-8 pb-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Title Field */}
               <div className="space-y-2">
                 <Label htmlFor="title" className="text-gray-700 font-semibold">
-                  Article Title <span className="text-red-500">*</span>
+                  Judul Artikel <span className="text-red-500">*</span>
                 </Label>
                 <Input
                   id="title"
                   type="text"
-                  placeholder="Enter article title"
+                  placeholder="Masukkan judul artikel"
                   required
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
@@ -125,12 +125,12 @@ export default function ArticleCreation() {
                 {/* Author Field */}
                 <div className="space-y-2">
                   <Label htmlFor="author" className="text-gray-700 font-semibold">
-                    Author Name <span className="text-red-500">*</span>
+                    Nama Penulis <span className="text-red-500">*</span>
                   </Label>
                   <Input
                     id="author"
                     type="text"
-                    placeholder="Enter author name"
+                    placeholder="Masukkan Nama Penulis"
                     required
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
@@ -141,15 +141,15 @@ export default function ArticleCreation() {
                 {/* Category Field */}
                 <div className="space-y-2">
                   <Label htmlFor="category" className="text-gray-700 font-semibold">
-                    Category <span className="text-red-500">*</span>
+                    Kategori <span className="text-red-500">*</span>
                   </Label>
                   <Select value={category} onValueChange={setCategory}>
                     <SelectTrigger id="category" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
                       <SelectValue placeholder="Select category" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="student">Student</SelectItem>
-                      <SelectItem value="teacher">Teacher</SelectItem>
+                      <SelectItem value="student">Siswa</SelectItem>
+                      <SelectItem value="teacher">Guru</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -158,11 +158,11 @@ export default function ArticleCreation() {
               {/* Content Field */}
               <div className="space-y-2">
                 <Label htmlFor="content" className="text-gray-700 font-semibold">
-                  Article Content <span className="text-red-500">*</span>
+                  Judul Artikel <span className="text-red-500">*</span>
                 </Label>
                 <Textarea
                   id="content"
-                  placeholder="Enter article content (Markdown supported)"
+                  placeholder="Masukkan konten artikel (Markdown supported)"
                   required
                   rows={12}
                   value={content}
@@ -170,14 +170,14 @@ export default function ArticleCreation() {
                   className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 font-mono text-sm"
                 />
                 <p className="text-xs text-gray-500 mt-2">
-                  💡 Tip: You can use Markdown formatting for better text styling
+                  Tip: Kamu bisa menggunakan format Markdown seperti h1-h6 atau yang lain untuk styling yang lebih baik
                 </p>
               </div>
 
               {/* Image URL Field */}
               <div className="space-y-2">
                 <Label htmlFor="imageUrl" className="text-gray-700 font-semibold">
-                  Image URL <span className="text-gray-400 text-sm">(Optional)</span>
+                  URL Gambar <span className="text-gray-400 text-sm">(Opsional)</span>
                 </Label>
                 <Input
                   id="imageUrl"
@@ -188,7 +188,7 @@ export default function ArticleCreation() {
                   className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                 />
                 <p className="text-xs text-gray-500 mt-2">
-                  Provide a direct URL to an image. Leave blank if you don't want to add an image.
+                  Masukkan url yang mengarah langsung ke gambar jika ingin menggunakan gambar cover 
                 </p>
               </div>
 
@@ -199,7 +199,7 @@ export default function ArticleCreation() {
                   className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all transform hover:scale-105" 
                   disabled={loading}
                 >
-                  {loading ? "Creating..." : "Create Article"}
+                  {loading ? "Membuat..." : "Buat Artikel"}
                 </Button>
                 <Button 
                   type="button"
@@ -214,7 +214,7 @@ export default function ArticleCreation() {
                   }}
                   disabled={loading}
                 >
-                  Clear
+                  Hapus
                 </Button>
               </div>
             </form>
