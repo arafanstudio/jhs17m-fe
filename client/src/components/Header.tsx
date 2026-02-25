@@ -25,18 +25,20 @@ export default function Header({ transparent = false }: HeaderProps) {
           {/* Logo */}
           <Link href="/">
             <a className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl font-bold">📚</span>
+              <div className="w-12 h-12 flex items-center justify-center overflow-hidden">
+                <img src="/logo.webp" alt="Logo SMPN 17 Malang" className="w-full h-full object-contain" 
+                />
               </div>
-              <div className="hidden sm:block">
-                <h1 className={`text-xl font-bold ${transparent ? 'text-white' : 'text-gray-800'}`}>ESASHAKA</h1>
-                <p className={`text-xs ${transparent ? 'text-white/80' : 'text-gray-500'}`}>SMP Negeri 17 Malang</p>
+              <div className="block">
+                <h1 className={`text-xl font-bold ${transparent ? 'text-white' : 'text-gray-800'}`}>
+                  ESASHAKA
+                </h1>
+                <p className={`text-xs ${transparent ? 'text-white/80' : 'text-gray-500'}`}>
+                  SMP Negeri 17 Malang
+                </p>
               </div>
               <div className="w-24 h-24 -ml-10">
-                <DotLottieReact
-                  src="https://lottie.host/f0407f01-d251-47d9-b1fc-2d5ef2f85b43/bIFPRK6Cm4.lottie"
-                  loop
-                  autoplay
+                <DotLottieReact src="https://lottie.host/f0407f01-d251-47d9-b1fc-2d5ef2f85b43/bIFPRK6Cm4.lottie" loop autoplay
                 />
               </div>
             </a>

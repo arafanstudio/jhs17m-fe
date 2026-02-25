@@ -24,13 +24,17 @@ export default function SplashScreen({ onComplete, duration = 3000 }: SplashScre
       <div className="text-center">
         {/* Logo/Icon */}
         <div className="mb-8 flex justify-center">
-          <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center shadow-lg pulse-scale">
-            <span className="text-white text-4xl font-bold">📚</span>
+          <div className="w-64 h-64 flex items-center justify-center pulse-scale overflow-hidden">
+            <img 
+              src="/logo.webp" 
+              alt="Logo SMPN 17 Malang" 
+              className="w-full h-full object-contain" 
+            />
           </div>
         </div>
 
         {/* School Name */}
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">Sekolah Kami</h1>
+        <h1 className="text-4xl font-bold text-gray-800 mb-2">SPMN 17 Malang</h1>
         <p className="text-gray-500 text-lg mb-8">Membangun Masa Depan Cerah</p>
 
         {/* Loading Indicator */}

@@ -5,10 +5,10 @@ const WhySMPN17: React.FC = () => {
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-8 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          Kenapa Harus SMPN 17?
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 md:mb-12">
+          Kenapa Harus<br className="block md:hidden"/> SMPN 17?
         </h2>
         <div className="flex justify-center">
           <div className="w-full max-w-4xl aspect-video shadow-2xl rounded-xl overflow-hidden">

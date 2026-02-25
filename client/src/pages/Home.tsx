@@ -59,43 +59,37 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40"></div>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex items-center">
+          <div className="relative z-10 h-full mt-10 flex items-center">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 {/* Left Content */}
-                <div className="gsap-hero-content">
-                    <div className="flex items-center mb-4">
-                      <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-                        Selamat Datang di Sekolah Kami
+                <div className="gsap-hero-content order-2 md:order-none">
+                    <div className="md:flex items-center mb-4">
+                      <h1 className="text-3xl md:text-7xl text-center md:text-left font-bold text-white leading-tight">
+                        Selamat Datang<br /> di Sekolah Kami
                       </h1>
                     </div>
-                  <p className="text-xl md:text-2xl text-white mb-8 opacity-90 max-w-2xl">
+                  <p className="text-lg md:text-2xl text-center md:text-left text-white mb-8 opacity-90 max-w-2xl">
                     Membangun generasi masa depan yang cerdas, berkarakter, dan berwawasan global melalui pendidikan berkualitas.
                   </p>
-                  <div className="flex flex-wrap gap-4">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-lg transition-all transform hover:scale-105">
-                      Pelajari Lebih Lanjut
+                  <div className="grid grid-cols-2 gap-4 w-full max-w-md">
+                    <button className="flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-sm md:text-base text-white font-bold py-4 rounded-lg transition-all transform hover:scale-105">
+                      Fasilitas Kami
                     </button>
-                    <button className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-blue-600 font-bold py-4 px-10 rounded-lg transition-all transform hover:scale-105">
-                      Hubungi Kami
+                    <button className="flex justify-center items-center border-2 border-white text-sm md:text-base text-white bg-transparent hover:bg-white hover:text-blue-600 font-bold py-4 rounded-lg transition-all transform hover:scale-105">
+                      Ekstrakurikuler
                     </button>
                   </div>
                 </div>
 
                 {/* Right Image Carousel */}
-                <div className="hidden md:block w-full h-[500px] rounded-2xl shadow-2xl float-accent shadow-black/50 overflow-hidden gsap-hero-image">
+                <div className="order-1 md:order-none block w-full h-[200px] md:h-[500px] rounded-2xl shadow-2xl float-accent shadow-black/50 overflow-hidden gsap-hero-image">
                   <HeroImageCarousel />
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Scroll Down Indicator */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-            <div className="w-8 h-12 border-2 border-white rounded-full flex justify-center p-2">
-              <div className="w-1 h-3 bg-white rounded-full"></div>
-            </div>
-          </div>
         </section>
 
         {/* Media Esashaka Section */}

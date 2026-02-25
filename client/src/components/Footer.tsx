@@ -44,8 +44,9 @@ export default function Footer() {
           {/* About Section */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
-                <span className="text-white text-lg font-bold">📚</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center overflow-hidden">
+                <img  src="/logo.webp" alt="Logo SMPN 17 Malang" className="w-7 h-7 object-contain" 
+                />
               </div>
               <h3 className="text-lg font-bold text-gray-800">Sekolah Kami</h3>
             </div>

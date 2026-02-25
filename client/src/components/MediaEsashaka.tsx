@@ -90,9 +90,9 @@ const MediaEsashaka: React.FC = () => {
   );
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-8 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
           Media Esashaka
         </h2>
         {loading && renderSkeleton()}
@@ -108,7 +108,7 @@ const MediaEsashaka: React.FC = () => {
           </div>
         )}
         <div className="text-center mt-12">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md">
+          <button className="bg-blue-600 hover:bg-blue-700 text-sm md:text-base text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md">
             Lihat Semua Berita
           </button>
         </div>
