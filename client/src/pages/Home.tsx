@@ -70,7 +70,7 @@ export default function Home() {
                       </h1>
                     </div>
                   <p className="text-lg md:text-2xl text-center md:text-left text-white mb-8 opacity-90 max-w-2xl">
-                    Mewujudkan generasi yang cerdas, memiliki karakter kuat, serta berwawasan luas melalui sistem pendidikan yang berkualitas.
+                    Membangun generasi masa depan yang cerdas, berkarakter, dan berwawasan global melalui pendidikan berkualitas.
                   </p>
                   <div className="grid grid-cols-2 gap-4 w-full max-w-md">
                     <button className="flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-sm md:text-base text-white font-bold py-4 rounded-lg transition-all transform hover:scale-105">

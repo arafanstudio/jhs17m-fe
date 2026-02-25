@@ -6,12 +6,14 @@ function handleResponsiveZoom() {
     const width = window.innerWidth;
     const html = document.documentElement;
 
-    if (width < 1920) {
+    // Logic: Hanya terapkan zoom jika layar adalah Desktop (di atas 1024px)
+    // tapi lebih kecil dari standar 1920px
+    if (width >= 1024 && width < 1920) {
         // @ts-ignore
-        html.style.zoom = "0.9"; // Gunakan desimal agar lebih mudah dihitung
-        // Set CSS Variable untuk digunakan di Tailwind
+        html.style.zoom = "0.9";
         html.style.setProperty('--app-zoom', '0.9');
     } else {
+        // Kembalikan ke normal untuk Mobile (< 1024px) atau layar sangat besar (>= 1920px)
         // @ts-ignore
         html.style.zoom = "1";
         html.style.setProperty('--app-zoom', '1');
