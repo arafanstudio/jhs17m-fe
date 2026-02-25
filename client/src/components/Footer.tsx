@@ -86,9 +86,9 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-gray-800 mb-4">Hubungi Kami</h4>
             <div className="space-y-2 text-sm text-gray-600">
-              <p>📍 Jl. Pendidikan No. 123</p>
-              <p>📞 (021) 1234-5678</p>
-              <p>✉️ info@sekolahkami.id</p>
+              <p>📍 Jl. Pelabuhan Tanjung Priok No.170, Bakalankrajan, Kec. Sukun, Kota Malang, Jawa Timur 65148</p>
+              <p>📞 (0341) 837036</p>
+              <p>✉️ info@smpn17malang.sch.id</p>
               <p>🕐 Senin - Jumat: 07:00 - 15:00</p>
             </div>
           </div>

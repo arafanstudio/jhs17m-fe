@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import { useSplash } from "@/contexts/SplashContext";
 import SplashScreen from "@/components/SplashScreen";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,7 +13,7 @@ import AwardSection from "@/components/AwardSection";
 import ActivitySection from "@/components/ActivitySection";
 
 export default function Home() {
-  const [showSplash, setShowSplash] = useState(true);
+  const { showSplash, completeSplash } = useSplash();
   const [headerTransparent, setHeaderTransparent] = useState(true);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export default function Home() {
       {/* Splash Screen */}
       {showSplash && (
         <SplashScreen
-          onComplete={() => setShowSplash(false)}
+          onComplete={() => completeSplash()}
           duration={3000}
         />
       )}
@@ -137,7 +138,7 @@ export default function Home() {
               Jadilah bagian dari komunitas pembelajaran yang dinamis dan inovatif untuk masa depan yang lebih gemilang.
             </p>
             <button className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-12 rounded-lg transition-all transform hover:scale-105 text-lg">
-              Daftar Sekarang
+              Hubungi Kami
             </button>
           </div>
         </section>

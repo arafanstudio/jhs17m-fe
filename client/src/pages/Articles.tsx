@@ -18,24 +18,26 @@ const Articles: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        // Fetch all articles (assuming there's an endpoint for all articles, or use the same one if it returns all)
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/articles`);
-        if (!response.ok) {
-          throw new Error("Failed to fetch articles");
-        }
-        const data: Article[] = await response.json();
-        setArticles(data);
-      } catch (err) {
-        console.error("Error fetching articles:", err);
-        setError("Gagal memuat berita. Silakan coba lagi nanti.");
-      } finally {
-        setLoading(false);
+  const fetchArticles = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      // Fetch all articles (assuming there's an endpoint for all articles, or use the same one if it returns all)
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/articles`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch articles");
       }
-    };
+      const data: Article[] = await response.json();
+      setArticles(data);
+    } catch (err) {
+      console.error("Error fetching articles:", err);
+      setError("Gagal memuat berita. Silakan coba lagi nanti.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchArticles();
   }, []);
 
@@ -113,7 +115,7 @@ const Articles: React.FC = () => {
               <div className="text-center py-12">
                 <p className="text-red-500 text-lg mb-4">{error}</p>
                 <button 
-                  onClick={() => window.location.reload()}
+                  onClick={() => fetchArticles()}
                   className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
                 >
                   Coba Lagi

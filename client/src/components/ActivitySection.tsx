@@ -50,11 +50,6 @@ const ActivitySection: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="text-center mt-12">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md">
-            Lihat Galeri Foto
-          </button>
-        </div>
       </div>
     </section>
   );

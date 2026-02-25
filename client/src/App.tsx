@@ -15,6 +15,7 @@ import ArticleCreation from "./pages/ArticleCreation";
 import ArticleDetail from "./pages/ArticleDetail";
 import { useGsapAnimations } from "./hooks/useGsapAnimations";
 import { useEffect } from "react";
+import { SplashProvider } from "./contexts/SplashContext";
 
 function Router() {
   // Call animations hook here so it runs on every route change
@@ -47,14 +48,16 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
+      <SplashProvider>
+        <ThemeProvider
+          defaultTheme="light"
+        >
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </ThemeProvider>
+      </SplashProvider>
     </ErrorBoundary>
   );
 }
