@@ -23,7 +23,7 @@ const Articles: React.FC = () => {
       setLoading(true);
       setError(null);
       // Fetch all articles (assuming there's an endpoint for all articles, or use the same one if it returns all)
-      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/articles`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/articles/all`);
       if (!response.ok) {
         throw new Error("Failed to fetch articles");
       }
