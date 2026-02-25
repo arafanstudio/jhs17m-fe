@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Skeleton } from "./ui/skeleton";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "wouter";
 
 interface Article {
@@ -11,7 +13,7 @@ interface Article {
   created_at: string;
 }
 
-const MediaEsashaka: React.FC = () => {
+const Articles: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -19,7 +21,8 @@ const MediaEsashaka: React.FC = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/articles/latest`);
+        // Fetch all articles (assuming there's an endpoint for all articles, or use the same one if it returns all)
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/articles`);
         if (!response.ok) {
           throw new Error("Failed to fetch articles");
         }
@@ -27,7 +30,7 @@ const MediaEsashaka: React.FC = () => {
         setArticles(data);
       } catch (err) {
         console.error("Error fetching articles:", err);
-        setError("Failed to load articles. Please try again later.");
+        setError("Gagal memuat berita. Silakan coba lagi nanti.");
       } finally {
         setLoading(false);
       }
@@ -62,19 +65,19 @@ const MediaEsashaka: React.FC = () => {
         <p className="text-gray-700 line-clamp-3">
           {article.content}
         </p>
-        <a
-          href={`/article/${article.id}`} // Placeholder link for full article view
+        <Link
+          href={`/article/${article.id}`}
           className="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
         >
           Baca Selengkapnya &rarr;
-        </a>
+        </Link>
       </CardContent>
     </Card>
   );
 
   const renderSkeleton = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[...Array(3)].map((_, index) => (
+      {[...Array(6)].map((_, index) => (
         <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
           <Skeleton className="w-full h-48" />
           <div className="p-6">
@@ -91,33 +94,49 @@ const MediaEsashaka: React.FC = () => {
   );
 
   return (
-    <section className="py-8 md:py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-          Media Esashaka
-        </h2>
-        {loading && renderSkeleton()}
-        {error && (
-          <p className="text-center text-red-500 text-lg">{error}</p>
-        )}
-        {!loading && !error && articles.length === 0 && (
-          <p className="text-center text-gray-500 text-lg">No articles found.</p>
-        )}
-        {!loading && !error && articles.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.map(renderArticleCard)}
+    <div className="min-h-screen flex flex-col bg-white">
+      <Header />
+      
+      <main className="flex-grow">
+        {/* Page Header */}
+        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl font-bold">Berita & Artikel</h1>
+            <p className="text-blue-100 mt-2">Informasi terbaru seputar kegiatan dan prestasi SMPN 17 Malang</p>
           </div>
-        )}
-        <div className="text-center mt-12">
-          <Link href="/berita">
-            <button className="bg-blue-600 hover:bg-blue-700 text-sm md:text-base text-white font-bold py-3 px-8 rounded-lg transition-colors shadow-md">
-              Lihat Semua Berita
-            </button>
-          </Link>
-        </div>
-      </div>
-    </section>
+        </section>
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            {loading && renderSkeleton()}
+            {error && (
+              <div className="text-center py-12">
+                <p className="text-red-500 text-lg mb-4">{error}</p>
+                <button 
+                  onClick={() => window.location.reload()}
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+                >
+                  Coba Lagi
+                </button>
+              </div>
+            )}
+            {!loading && !error && articles.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-gray-500 text-lg">Belum ada berita yang diterbitkan.</p>
+              </div>
+            )}
+            {!loading && !error && articles.length > 0 && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {articles.map(renderArticleCard)}
+              </div>
+            )}
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
   );
 };
 
-export default MediaEsashaka;
+export default Articles;

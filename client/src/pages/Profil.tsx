@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { CheckCircle2 } from "lucide-react";
+import { Lightbulb } from "lucide-react";
 
 export default function Profil() {
   const misiPoints = [
@@ -41,8 +41,12 @@ export default function Profil() {
                 </p>
               </div>
               <div>
-                <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl h-96 flex items-center justify-center shadow-lg">
-                  <span className="text-white text-9xl">🏫</span>
+                <div className="rounded-2xl h-96 flex items-center justify-center shadow-lg overflow-hidden">
+                  <img 
+                    src="/profile.webp" 
+                    alt="Profile" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -59,58 +63,37 @@ export default function Profil() {
 
             {/* Misi Section */}
             <div className="mb-16 gsap-reveal">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Misi</h3>
+              <h3 className="text-3xl font-bold text-gray-800 mb-8 flex items-center gap-3">
+                <Lightbulb className="w-8 h-8 text-blue-600" />
+                Misi
+              </h3>
               <p className="text-gray-600 mb-8 text-base">
                 Berdasarkan visi tersebut, berikut adalah misi dari SMPN 17 Malang:
               </p>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {misiPoints.map((point, index) => (
-                  <div key={index} className="flex gap-4 p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-200">
-                    <div className="flex-shrink-0 pt-1">
-                      <CheckCircle2 className="w-6 h-6 text-blue-600 flex-shrink-0" />
-                    </div>
-                    <div>
-                      <p className="text-gray-700 leading-relaxed">
-                        <span className="font-semibold text-blue-600">{index + 1}.</span> {point}
-                      </p>
+                  <div 
+                    key={index} 
+                    className="group relative overflow-hidden rounded-xl p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-100 hover:border-blue-400 transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/5 group-hover:to-indigo-500/5 transition-all duration-300"></div>
+                    <div className="relative flex gap-4">
+                      <div className="flex-shrink-0">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm">
+                          {index + 1}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-gray-700 leading-relaxed">
+                          {point}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Nilai Section */}
-            <div className="mb-16 gsap-reveal">
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-xl border-l-4 border-green-600">
-                <h3 className="text-2xl font-bold text-green-600 mb-4">Nilai-Nilai Inti</h3>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Integritas, Inovasi, Inklusivitas, Inspirasi, dan Investasi dalam pengembangan sumber daya manusia.
-                </p>
-              </div>
-            </div>
-
-            {/* Key Information */}
-            <div className="bg-gray-50 p-8 rounded-xl gsap-reveal">
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Informasi Penting</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-2">Lokasi</h4>
-                  <p className="text-gray-600">Malang, Jawa Timur</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-2">Kontak</h4>
-                  <p className="text-gray-600">Hubungi kami untuk informasi lebih lanjut</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-2">Jam Operasional</h4>
-                  <p className="text-gray-600">Senin - Jumat: 07:00 - 15:00</p>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800 mb-2">Status</h4>
-                  <p className="text-gray-600">SMP Negeri 17 Malang</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
       </main>

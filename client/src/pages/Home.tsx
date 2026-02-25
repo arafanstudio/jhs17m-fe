@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import SplashScreen from "@/components/SplashScreen";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -73,12 +74,16 @@ export default function Home() {
                     Membangun generasi masa depan yang cerdas, berkarakter, dan berwawasan global melalui pendidikan berkualitas.
                   </p>
                   <div className="grid grid-cols-2 gap-4 w-full max-w-md">
-                    <button className="flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-sm md:text-base text-white font-bold py-4 rounded-lg transition-all transform hover:scale-105">
-                      Fasilitas Kami
-                    </button>
-                    <button className="flex justify-center items-center border-2 border-white text-sm md:text-base text-white bg-transparent hover:bg-white hover:text-blue-600 font-bold py-4 rounded-lg transition-all transform hover:scale-105">
-                      Ekstrakurikuler
-                    </button>
+                    <Link href="/fasilitas">
+                      <button className="flex justify-center items-center bg-blue-600 hover:bg-blue-700 text-sm md:text-base text-white font-bold py-4 rounded-lg transition-all transform hover:scale-105 w-full">
+                        Fasilitas Kami
+                      </button>
+                    </Link>
+                    <Link href="/ekstrakurikuler">
+                      <button className="flex justify-center items-center border-2 border-white text-sm md:text-base text-white bg-transparent hover:bg-white hover:text-blue-600 font-bold py-4 rounded-lg transition-all transform hover:scale-105 w-full">
+                        Ekstrakurikuler
+                      </button>
+                    </Link>
                   </div>
                 </div>
 
