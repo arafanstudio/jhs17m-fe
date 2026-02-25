@@ -14,6 +14,7 @@ import {
 import { toast } from "sonner";
 import { useAdminAuth, logoutAdmin } from "../hooks/useAdminAuth";
 import { useLocation } from "wouter";
+import { LogOut, FileText } from "lucide-react";
 
 export default function ArticleCreation() {
   const isAuthenticated = useAdminAuth();
@@ -89,79 +90,190 @@ export default function ArticleCreation() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900 p-4">
-      <div className="w-full max-w-3xl flex justify-end mb-4">
-        <Button variant="outline" onClick={handleLogout}>
-          Logout
-        </Button>
-      </div>
-      <Card className="w-full max-w-3xl">
-        <CardHeader>
-          <CardTitle className="text-2xl text-center">Create New Article</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="grid gap-6">
-            <div className="grid gap-2">
-              <Label htmlFor="title">Title</Label>
-              <Input
-                id="title"
-                type="text"
-                placeholder="Article Title"
-                required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-8">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200 mb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center">
+              <FileText className="text-white" size={24} />
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="author">Author Name</Label>
-              <Input
-                id="author"
-                type="text"
-                placeholder="Enter author name"
-                required
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
-              />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-800">Admin Dashboard</h1>
+              <p className="text-sm text-gray-500">Create and manage articles</p>
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="category">Category</Label>
-              <Select value={category} onValueChange={setCategory}>
-                <SelectTrigger id="category">
-                  <SelectValue placeholder="Select category" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="student">Student</SelectItem>
-                  <SelectItem value="teacher">Teacher</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="content">Content</Label>
-              <Textarea
-                id="content"
-                placeholder="Article Content (Markdown supported)"
-                required
-                rows={10}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="imageUrl">Image URL (Optional)</Label>
-              <Input
-                id="imageUrl"
-                type="url"
-                placeholder="https://example.com/image.jpg"
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-              />
-            </div>
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Creating..." : "Create Article"}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+          </div>
+          <Button 
+            variant="outline" 
+            onClick={handleLogout}
+            className="flex items-center gap-2 border-gray-300 hover:bg-red-50 hover:border-red-300 hover:text-red-600"
+          >
+            <LogOut size={18} />
+            Logout
+          </Button>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <Card className="shadow-lg border-0">
+          <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-8">
+            <CardTitle className="text-2xl flex items-center gap-2">
+              <FileText size={28} />
+              Create New Article
+            </CardTitle>
+            <p className="text-blue-100 text-sm mt-3">Fill in the form below to create a new article</p>
+          </CardHeader>
+          <CardContent className="pt-8 pb-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Title Field */}
+              <div className="space-y-2">
+                <Label htmlFor="title" className="text-gray-700 font-semibold">
+                  Article Title <span className="text-red-500">*</span>
+                </Label>
+                <Input
+                  id="title"
+                  type="text"
+                  placeholder="Enter article title"
+                  required
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                />
+              </div>
+
+              {/* Author and Category Row */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Author Field */}
+                <div className="space-y-2">
+                  <Label htmlFor="author" className="text-gray-700 font-semibold">
+                    Author Name <span className="text-red-500">*</span>
+                  </Label>
+                  <Input
+                    id="author"
+                    type="text"
+                    placeholder="Enter author name"
+                    required
+                    value={author}
+                    onChange={(e) => setAuthor(e.target.value)}
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                  />
+                </div>
+
+                {/* Category Field */}
+                <div className="space-y-2">
+                  <Label htmlFor="category" className="text-gray-700 font-semibold">
+                    Category <span className="text-red-500">*</span>
+                  </Label>
+                  <Select value={category} onValueChange={setCategory}>
+                    <SelectTrigger id="category" className="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                      <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="student">Student</SelectItem>
+                      <SelectItem value="teacher">Teacher</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              {/* Content Field */}
+              <div className="space-y-2">
+                <Label htmlFor="content" className="text-gray-700 font-semibold">
+                  Article Content <span className="text-red-500">*</span>
+                </Label>
+                <Textarea
+                  id="content"
+                  placeholder="Enter article content (Markdown supported)"
+                  required
+                  rows={12}
+                  value={content}
+                  onChange={(e) => setContent(e.target.value)}
+                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 font-mono text-sm"
+                />
+                <p className="text-xs text-gray-500 mt-2">
+                  💡 Tip: You can use Markdown formatting for better text styling
+                </p>
+              </div>
+
+              {/* Image URL Field */}
+              <div className="space-y-2">
+                <Label htmlFor="imageUrl" className="text-gray-700 font-semibold">
+                  Image URL <span className="text-gray-400 text-sm">(Optional)</span>
+                </Label>
+                <Input
+                  id="imageUrl"
+                  type="url"
+                  placeholder="https://example.com/image.jpg"
+                  value={imageUrl}
+                  onChange={(e) => setImageUrl(e.target.value)}
+                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                />
+                <p className="text-xs text-gray-500 mt-2">
+                  Provide a direct URL to an image. Leave blank if you don't want to add an image.
+                </p>
+              </div>
+
+              {/* Submit Button */}
+              <div className="flex gap-4 pt-4">
+                <Button 
+                  type="submit" 
+                  className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-2.5 rounded-lg transition-all transform hover:scale-105" 
+                  disabled={loading}
+                >
+                  {loading ? "Creating..." : "Create Article"}
+                </Button>
+                <Button 
+                  type="button"
+                  variant="outline"
+                  className="px-6 border-gray-300 hover:bg-gray-50"
+                  onClick={() => {
+                    setTitle("");
+                    setContent("");
+                    setImageUrl("");
+                    setCategory("student");
+                    setAuthor("");
+                  }}
+                  disabled={loading}
+                >
+                  Clear
+                </Button>
+              </div>
+            </form>
+          </CardContent>
+        </Card>
+
+        {/* Info Section */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 pb-8">
+          <Card className="shadow-sm border-gray-200">
+            <CardContent className="pt-6 pb-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">📝</div>
+                <h3 className="font-semibold text-gray-800 mb-1">Rich Content</h3>
+                <p className="text-sm text-gray-600">Support for Markdown formatting and styling</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="shadow-sm border-gray-200">
+            <CardContent className="pt-6 pb-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">🖼️</div>
+                <h3 className="font-semibold text-gray-800 mb-1">Image Support</h3>
+                <p className="text-sm text-gray-600">Add featured images to your articles</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="shadow-sm border-gray-200">
+            <CardContent className="pt-6 pb-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600 mb-2">🏷️</div>
+                <h3 className="font-semibold text-gray-800 mb-1">Categories</h3>
+                <p className="text-sm text-gray-600">Organize articles by category</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </main>
     </div>
   );
 }

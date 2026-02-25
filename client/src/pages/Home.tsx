@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SplashScreen from "@/components/SplashScreen";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +12,18 @@ import ActivitySection from "@/components/ActivitySection";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
+  const [headerTransparent, setHeaderTransparent] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change header style when scrolled past hero section
+      // Using a small offset (50px) for a smoother transition
+      setHeaderTransparent(window.scrollY < 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -23,12 +35,20 @@ export default function Home() {
         />
       )}
 
-      {/* Header */}
-      <Header />
+      {/* 
+        Sticky Header using 'fixed' - Only rendered when Splash Screen is hidden
+        This ensures it floats ABOVE the content and doesn't take up space in the layout flow,
+        allowing the Hero section to be exactly h-screen.
+      */}
+      {!showSplash && (
+        <div className="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+          <Header transparent={headerTransparent} />
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="flex-grow">
-        {/* Hero Section with Blur Background - Modified to h-screen */}
+        {/* Hero Section - Exactly h-screen, no interference from header */}
         <section className="relative w-full h-screen overflow-hidden">
           {/* Blurred Background Carousel */}
           <div className="absolute inset-0">
@@ -45,10 +65,10 @@ export default function Home() {
                 {/* Left Content */}
                 <div className="gsap-hero-content">
                     <div className="flex items-center mb-4">
-	                    <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
-	                      Selamat Datang di Sekolah Kami
-	                    </h1>
-	                  </div>
+                      <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+                        Selamat Datang di Sekolah Kami
+                      </h1>
+                    </div>
                   <p className="text-xl md:text-2xl text-white mb-8 opacity-90 max-w-2xl">
                     Membangun generasi masa depan yang cerdas, berkarakter, dan berwawasan global melalui pendidikan berkualitas.
                   </p>
