@@ -59,9 +59,9 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40"></div>
 
           {/* Content */}
-          <div className="relative z-10 h-full mt-10 flex items-center">
+          <div className="relative z-10 h-full mt-6 md:mt-0 flex items-center">
             <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center">
                 {/* Left Content */}
                 <div className="gsap-hero-content order-2 md:order-none">
                     <div className="md:flex items-center mb-4">

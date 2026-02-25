@@ -24,7 +24,7 @@ export default function SplashScreen({ onComplete, duration = 3000 }: SplashScre
       <div className="text-center">
         {/* Logo/Icon */}
         <div className="mb-8 flex justify-center">
-          <div className="w-64 h-64 flex items-center justify-center pulse-scale overflow-hidden">
+          <div className="w-48 h-48 md:w-64 md:h-64 flex items-center justify-center pulse-scale overflow-hidden">
             <img 
               src="/logo.webp" 
               alt="Logo SMPN 17 Malang" 
