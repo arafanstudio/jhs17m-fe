@@ -44,11 +44,11 @@ export default function Footer() {
           {/* About Section */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center overflow-hidden">
-                <img  src="/logo.webp" alt="Logo SMPN 17 Malang" className="w-7 h-7 object-contain" 
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+                <img  src="/logo.webp" alt="Logo SMPN 17 Malang" className="w-full h-full object-contain" 
                 />
               </div>
-              <h3 className="text-lg font-bold text-gray-800">Sekolah Kami</h3>
+              <h3 className="text-lg font-bold text-gray-800">SMPN 17 Malang</h3>
             </div>
             <p className="text-gray-600 text-sm">
               Menyediakan pendidikan berkualitas untuk membangun generasi masa depan yang cerdas, berkarakter, dan berwawasan global.
@@ -117,7 +117,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-sm text-gray-500">
-            <p>&copy; {currentYear} Sekolah Kami. Semua hak dilindungi.</p>
+            <p>&copy; {currentYear} SMPN 17 Malang. Semua hak dilindungi.</p>
             <p className="mt-2">
               Dikembangkan dengan ❤️ untuk pendidikan yang lebih baik
             </p>

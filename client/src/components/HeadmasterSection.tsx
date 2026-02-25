@@ -4,8 +4,8 @@ const HeadmasterSection: React.FC = () => {
   return (
     <section className="py-8 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-          Sambutan Kepala Sekolah
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 md:mb-12">
+          Sambutan <br className="block md:hidden"/>Kepala Sekolah
         </h2>
         <div className="flex flex-col md:flex-row items-center bg-white p-2 md:p-8 rounded-xl shadow-lg">
           <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">

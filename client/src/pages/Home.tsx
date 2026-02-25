@@ -66,7 +66,7 @@ export default function Home() {
                 <div className="gsap-hero-content order-2 md:order-none">
                     <div className="md:flex items-center mb-4">
                       <h1 className="text-3xl md:text-7xl text-center md:text-left font-bold text-white leading-tight">
-                        Selamat Datang<br /> di Sekolah Kami
+                        Selamat Datang <br />di SMPN 17 Malang
                       </h1>
                     </div>
                   <p className="text-lg md:text-2xl text-center md:text-left text-white mb-8 opacity-90 max-w-2xl">

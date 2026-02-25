@@ -13,7 +13,7 @@ const AwardSection: React.FC = () => {
   return (
     <section className="py-8 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 md:mb-12">
           Prestasi & Penghargaan
         </h2>
         <div className="space-y-8 max-w-3xl mx-auto">
