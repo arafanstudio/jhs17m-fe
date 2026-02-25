@@ -118,8 +118,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
+  :root {
+    --app-zoom: 1;
+  }
+
+  /* Custom class untuk tinggi layar yang tetap penuh meski di-zoom out */
+  .h-screen-fix {
+    /* Menghitung tinggi agar tetap 100% dari viewport fisik */
+    height: calc(100vh / var(--app-zoom));
+  }
+
+  /* Jika kamu pakai Firefox (yang pakai transform scale) */
+  @-moz-document url-prefix() {
+    .h-screen-fix {
+      height: 100vh; /* Firefox biasanya menangani vh berbeda pada scale */
+    }
+  }
   
-  /* Hide scrollbar on desktop (min-width: 768px) while keeping scroll functionality */
   html {
     scrollbar-width: none;
     -ms-overflow-style: none;

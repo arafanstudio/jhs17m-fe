@@ -49,7 +49,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-grow">
         {/* Hero Section - Exactly h-screen, no interference from header */}
-        <section className="relative w-full h-screen overflow-hidden">
+        <section className="relative w-full h-screen-fix overflow-hidden">
           {/* Blurred Background Carousel */}
           <div className="absolute inset-0">
             <HeroImageCarousel isBlurred />
