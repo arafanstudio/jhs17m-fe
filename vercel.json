@@ -18,6 +18,7 @@
     { "src": "/akademik", "dest": "/index.html" },
     { "src": "/ekstrakurikuler", "dest": "/index.html" },
     { "src": "/fasilitas", "dest": "/index.html" },
+    { "src": "/berita", "dest": "/index.html" },
     { "src": "/elearning", "dest": "/index.html" },
     { "src": "/perpustakaan", "dest": "/index.html" },
     { "src": "/admin/login", "dest": "/index.html" },

@@ -28,10 +28,12 @@ const Articles: React.FC = () => {
         throw new Error("Failed to fetch articles");
       }
       const data: Article[] = await response.json();
-      setArticles(data);
+      // Ensure data is an array, if not set it to empty array
+      setArticles(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error("Error fetching articles:", err);
       setError("Gagal memuat berita. Silakan coba lagi nanti.");
+      setArticles([]); // Clear articles on error
     } finally {
       setLoading(false);
     }
