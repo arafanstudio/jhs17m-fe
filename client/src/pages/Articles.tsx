@@ -115,10 +115,16 @@ const Articles: React.FC = () => {
             {loading && renderSkeleton()}
             {error && (
               <div className="text-center py-12">
-                <p className="text-red-500 text-lg mb-4">{error}</p>
+                <div className="mb-4">
+                  <svg className="w-16 h-16 mx-auto text-red-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p className="text-red-500 text-lg font-semibold mb-2">Gagal Memuat Berita</p>
+                <p className="text-gray-600 text-sm mb-6">Terjadi kesalahan saat memuat data. Silakan periksa koneksi internet Anda dan coba lagi.</p>
                 <button 
                   onClick={() => fetchArticles()}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+                  className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   Coba Lagi
                 </button>
@@ -126,7 +132,13 @@ const Articles: React.FC = () => {
             )}
             {!loading && !error && articles.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">Belum ada berita yang diterbitkan.</p>
+                <div className="mb-4">
+                  <svg className="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v4m6 0a2 2 0 01-2-2v-4a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2zm0 0V5m0 16H9m0 0v-4" />
+                  </svg>
+                </div>
+                <p className="text-gray-600 text-lg font-semibold mb-2">Belum Ada Berita</p>
+                <p className="text-gray-500 text-sm">Saat ini belum ada artikel yang diterbitkan. Silakan kembali lagi nanti untuk melihat berita terbaru.</p>
               </div>
             )}
             {!loading && !error && articles.length > 0 && (
