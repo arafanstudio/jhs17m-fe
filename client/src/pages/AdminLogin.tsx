@@ -30,7 +30,7 @@ export default function AdminLogin() {
         // Simple authentication: store a flag in localStorage
         localStorage.setItem("isAdminAuthenticated", "true");
         toast.success("Login successful!");
-        setLocation("/admin/create-article");
+        setLocation("/admin/dashboard");
       } else {
         const errorData = await response.json();
         toast.error(errorData.message || "Login failed. Check your credentials.");
