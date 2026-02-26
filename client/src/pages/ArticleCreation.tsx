@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
@@ -24,6 +25,7 @@ export default function ArticleCreation() {
   const [category, setCategory] = useState("student");
   const [author, setAuthor] = useState("");
   const [loading, setLoading] = useState(false);
+  const [previewMode, setPreviewMode] = useState(false);
   const [, setLocation] = useLocation();
 
   if (!hasChecked) {
@@ -161,18 +163,47 @@ export default function ArticleCreation() {
 
               {/* Content Field */}
               <div className="space-y-2">
-                <Label htmlFor="content" className="text-gray-700 font-semibold">
-                  Judul Artikel <span className="text-red-500">*</span>
-                </Label>
-                <Textarea
-                  id="content"
-                  placeholder="Masukkan konten artikel (Markdown supported)"
-                  required
-                  rows={12}
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                  className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 font-mono text-sm"
-                />
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="content" className="text-gray-700 font-semibold">
+                    Konten Artikel <span className="text-red-500">*</span>
+                  </Label>
+                  <div className="flex gap-2">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setPreviewMode(false)}
+                      className={!previewMode ? "bg-blue-100 text-blue-700" : ""}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => setPreviewMode(true)}
+                      className={previewMode ? "bg-blue-100 text-blue-700" : ""}
+                    >
+                      Preview
+                    </Button>
+                  </div>
+                </div>
+                
+                {!previewMode ? (
+                  <Textarea
+                    id="content"
+                    placeholder="Masukkan konten artikel (Markdown supported)"
+                    required
+                    rows={12}
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                    className="border-gray-300 focus:border-blue-500 focus:ring-blue-500 font-mono text-sm"
+                  />
+                ) : (
+                  <div className="border border-gray-300 rounded-md p-4 min-h-[300px] bg-white prose max-w-none overflow-auto">
+                    <ReactMarkdown>{content || "*Belum ada konten*"}</ReactMarkdown>
+                  </div>
+                )}
                 <p className="text-xs text-gray-500 mt-2">
                   Tip: Kamu bisa menggunakan format Markdown seperti h1-h6 atau yang lain untuk styling yang lebih baik
                 </p>

@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
+import ReactMarkdown from "react-markdown";
+import { User, Tag, Calendar } from "lucide-react";
 
 interface Article {
   id: number;
@@ -12,6 +14,8 @@ interface Article {
   content: string;
   image_url: string | null;
   created_at: string;
+  author?: string;
+  category?: string;
 }
 
 const ArticleDetail: React.FC = () => {
@@ -95,21 +99,39 @@ const ArticleDetail: React.FC = () => {
     return (
       <Card className="shadow-xl">
         <CardContent className="p-6 md:p-10">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
             {article.title}
           </h1>
-          <p className="text-sm text-gray-500 mb-6">
-            Dipublikasikan pada: {formatDate(article.created_at)}
-          </p>
-          <div className="mb-8">
+          
+          <div className="flex flex-wrap gap-4 md:gap-6 mb-8 text-sm text-gray-600 border-y border-gray-100 py-4">
+            <div className="flex items-center gap-2">
+              <User size={18} className="text-blue-600" />
+              <span className="font-medium">{article.author || "Admin"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Calendar size={18} className="text-blue-600" />
+              <span>{formatDate(article.created_at)}</span>
+            </div>
+            {article.category && (
+              <div className="flex items-center gap-2">
+                <Tag size={18} className="text-blue-600" />
+                <span className="capitalize px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full text-xs font-semibold">
+                  {article.category === "student" ? "Siswa" : article.category === "teacher" ? "Guru" : article.category}
+                </span>
+              </div>
+            )}
+          </div>
+
+          <div className="mb-10">
             <img
               src={article.image_url || "https://via.placeholder.com/1200x600?text=Media+Esashaka"}
               alt={article.title}
-              className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
+              className="w-full h-auto max-h-[600px] object-cover rounded-xl shadow-lg"
             />
           </div>
-          <div className="prose max-w-none text-gray-700 leading-relaxed whitespace-pre-line">
-            <p>{article.content}</p>
+
+          <div className="prose prose-blue max-w-none text-gray-700 leading-relaxed">
+            <ReactMarkdown>{article.content}</ReactMarkdown>
           </div>
           <div className="mt-10 pt-6 border-t border-gray-200">
             <Link href="/" className="text-blue-600 hover:text-blue-800 font-medium transition-colors">
