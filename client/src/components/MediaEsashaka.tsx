@@ -62,6 +62,11 @@ const MediaEsashaka: React.FC = () => {
               {article.category === "student" ? "Siswa" : article.category === "teacher" ? "Guru" : article.category}
             </span>
           )}
+          <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center">
+            <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+            </svg>
+          </div>
           <span className="text-xs font-medium text-gray-600">{article.author || "Admin"}</span>
           <span className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">
             {formatDate(article.created_at)}
@@ -70,13 +75,6 @@ const MediaEsashaka: React.FC = () => {
         <CardTitle className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
           {article.title}
         </CardTitle>
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center">
-            <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-            </svg>
-          </div>
-        </div>
         <div className="text-gray-600 text-sm line-clamp-3 leading-relaxed mb-4 prose prose-sm max-w-none">
           <ReactMarkdown>{article.content.replace(/[#*`]/g, "")}</ReactMarkdown>
         </div>
