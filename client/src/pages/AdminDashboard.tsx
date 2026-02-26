@@ -56,7 +56,7 @@ interface Article {
 }
 
 export default function AdminDashboard() {
-  const isAuthenticated = useAdminAuth();
+  const { isAuthenticated, hasChecked } = useAdminAuth();
   const [, setLocation] = useLocation();
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
@@ -74,13 +74,19 @@ export default function AdminDashboard() {
   const [editLoading, setEditLoading] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
 
-  if (!isAuthenticated) {
+  useEffect(() => {
+    if (hasChecked && isAuthenticated) {
+      fetchArticles();
+    }
+  }, [hasChecked, isAuthenticated]);
+
+  if (!hasChecked) {
     return null;
   }
 
-  useEffect(() => {
-    fetchArticles();
-  }, []);
+  if (!isAuthenticated) {
+    return null;
+  }
 
   const fetchArticles = async () => {
     try {

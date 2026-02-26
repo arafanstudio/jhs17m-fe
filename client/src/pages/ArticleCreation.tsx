@@ -17,7 +17,7 @@ import { useLocation } from "wouter";
 import { LogOut, FileText } from "lucide-react";
 
 export default function ArticleCreation() {
-  const isAuthenticated = useAdminAuth();
+  const { isAuthenticated, hasChecked } = useAdminAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -25,6 +25,10 @@ export default function ArticleCreation() {
   const [author, setAuthor] = useState("");
   const [loading, setLoading] = useState(false);
   const [, setLocation] = useLocation();
+
+  if (!hasChecked) {
+    return null;
+  }
 
   if (!isAuthenticated) {
     // The useAdminAuth hook will handle the redirect to login
