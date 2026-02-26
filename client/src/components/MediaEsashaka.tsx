@@ -62,6 +62,7 @@ const MediaEsashaka: React.FC = () => {
               {article.category === "student" ? "Siswa" : article.category === "teacher" ? "Guru" : article.category}
             </span>
           )}
+          <span className="text-xs font-medium text-gray-600">{article.author || "Admin"}</span>
           <span className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">
             {formatDate(article.created_at)}
           </span>
@@ -75,7 +76,6 @@ const MediaEsashaka: React.FC = () => {
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
             </svg>
           </div>
-          <span className="text-xs font-medium text-gray-600">{article.author || "Admin"}</span>
         </div>
         <div className="text-gray-600 text-sm line-clamp-3 leading-relaxed mb-4 prose prose-sm max-w-none">
           <ReactMarkdown>{article.content.replace(/[#*`]/g, "")}</ReactMarkdown>
