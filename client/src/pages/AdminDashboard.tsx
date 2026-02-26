@@ -258,7 +258,7 @@ export default function AdminDashboard() {
                 Buat Artikel
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <p className="text-gray-600 mb-4">
                 Buat artikel baru untuk ditampilkan di halaman berita
               </p>
@@ -278,7 +278,7 @@ export default function AdminDashboard() {
                 Daftar Artikel
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <p className="text-gray-600 mb-4">
                 Lihat, edit, dan hapus artikel yang sudah dibuat
               </p>
@@ -295,7 +295,7 @@ export default function AdminDashboard() {
                 Statistik
               </CardTitle>
             </CardHeader>
-            <CardContent className="pt-6">
+            <CardContent className="py-6">
               <p className="text-gray-600 mb-4">
                 Lihat statistik dan informasi artikel
               </p>
@@ -325,7 +325,7 @@ export default function AdminDashboard() {
               Kelola semua artikel yang telah dibuat
             </p>
           </CardHeader>
-          <CardContent className="pt-6">
+          <CardContent className="py-6">
             {/* Search Bar */}
             <div className="mb-6">
               <Input
