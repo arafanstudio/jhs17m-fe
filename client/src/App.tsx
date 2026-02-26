@@ -13,6 +13,7 @@ import Fasilitas from "./pages/Fasilitas";
 import AdminLogin from "./pages/AdminLogin";
 import ArticleCreation from "./pages/ArticleCreation";
 import ArticleDetail from "./pages/ArticleDetail";
+import AdminDashboard from "./pages/AdminDashboard";
 import { useGsapAnimations } from "./hooks/useGsapAnimations";
 import { useEffect } from "react";
 import { SplashProvider } from "./contexts/SplashContext";
@@ -36,6 +37,7 @@ function Router() {
       <Route path={"/ekstrakurikuler"} component={Ekstrakurikuler} />
       <Route path={"/fasilitas"} component={Fasilitas} />
       <Route path={"/admin/login"} component={AdminLogin} />
+      <Route path={"/admin/dashboard"} component={AdminDashboard} />
       <Route path={"/admin/create-article"} component={ArticleCreation} />
       <Route path={"/article/:id"} component={ArticleDetail} />
       <Route path={"/404"} component={NotFound} />

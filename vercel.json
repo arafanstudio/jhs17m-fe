@@ -22,6 +22,7 @@
     { "src": "/elearning", "dest": "/index.html" },
     { "src": "/perpustakaan", "dest": "/index.html" },
     { "src": "/admin/login", "dest": "/index.html" },
+    { "src": "/admin/dashboard", "dest": "/index.html" },
     { "src": "/admin/create-article", "dest": "/index.html" },
     { "src": "/article/[^/]+", "dest": "/index.html" },
     { "src": "/404", "dest": "/index.html" }
