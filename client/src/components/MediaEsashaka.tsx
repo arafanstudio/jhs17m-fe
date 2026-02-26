@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Skeleton } from "./ui/skeleton";
 import { Link } from "wouter";
+import ReactMarkdown from "react-markdown";
 
 interface Article {
   id: number;
@@ -9,6 +10,8 @@ interface Article {
   content: string;
   image_url: string | null;
   created_at: string;
+  author?: string;
+  category?: string;
 }
 
 const MediaEsashaka: React.FC = () => {
@@ -53,15 +56,30 @@ const MediaEsashaka: React.FC = () => {
         className="w-full h-48 object-cover"
       />
       <CardContent className="p-6">
-        <CardTitle className="text-xl font-semibold text-gray-800 mb-2 line-clamp-2">
+        <div className="flex items-center gap-2 mb-3">
+          {article.category && (
+            <span className="capitalize px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-bold tracking-wider">
+              {article.category === "student" ? "Siswa" : article.category === "teacher" ? "Guru" : article.category}
+            </span>
+          )}
+          <span className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">
+            {formatDate(article.created_at)}
+          </span>
+        </div>
+        <CardTitle className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 leading-tight">
           {article.title}
         </CardTitle>
-        <p className="text-gray-600 text-sm mb-4">
-          Tanggal: {formatDate(article.created_at)}
-        </p>
-        <p className="text-gray-700 line-clamp-3">
-          {article.content}
-        </p>
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center">
+            <svg className="w-3 h-3 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+            </svg>
+          </div>
+          <span className="text-xs font-medium text-gray-600">{article.author || "Admin"}</span>
+        </div>
+        <div className="text-gray-600 text-sm line-clamp-3 leading-relaxed mb-4 prose prose-sm max-w-none">
+          <ReactMarkdown>{article.content.replace(/[#*`]/g, "")}</ReactMarkdown>
+        </div>
         <a
           href={`/article/${article.id}`} // Placeholder link for full article view
           className="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium"
