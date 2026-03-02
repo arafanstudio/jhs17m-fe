@@ -19,10 +19,6 @@
     { "src": "/ekstrakurikuler", "dest": "/index.html" },
     { "src": "/fasilitas", "dest": "/index.html" },
     { "src": "/berita", "dest": "/index.html" },
-    { 
-      "src": "/perpustakaan", 
-      "dest": "https://sites.google.com/guru.smp.belajar.id/perpustakaanesashaka/home" 
-    },
     { "src": "/admin/login", "dest": "/index.html" },
     { "src": "/admin/dashboard", "dest": "/index.html" },
     { "src": "/admin/create-article", "dest": "/index.html" },
