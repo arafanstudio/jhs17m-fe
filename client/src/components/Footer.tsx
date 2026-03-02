@@ -75,7 +75,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/perpustakaan" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <a href="https://sites.google.com/guru.smp.belajar.id/perpustakaanesashaka/home" className="text-gray-600 hover:text-blue-600 transition-colors">
                   Perpustakaan
                 </a>
               </li>

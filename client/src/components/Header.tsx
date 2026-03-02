@@ -9,7 +9,7 @@ const navItems = [
   { label: "Akademik", href: "/akademik" },
   { label: "Ekstrakurikuler", href: "/ekstrakurikuler" },
   { label: "Fasilitas", href: "/fasilitas" },
-  { label: "Perpustakaan", href: "/perpustakaan" }
+  { label: "Perpustakaan", href: "https://sites.google.com/guru.smp.belajar.id/perpustakaanesashaka/home" }
 ];
 
 interface HeaderProps {
