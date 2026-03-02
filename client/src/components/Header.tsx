@@ -47,14 +47,31 @@ export default function Header({ transparent = false }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <a className={`${transparent ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-blue-600'} font-medium transition-colors relative group`}>
-                  {item.label}
-                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${transparent ? 'bg-white' : 'bg-blue-600'} group-hover:w-full transition-all duration-300`}></span>
-                </a>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              // Cek apakah ini link perpustakaan
+              const isExternal = item.href === "/perpustakaan";
+              const className = `${transparent ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-blue-600'} font-medium transition-colors relative group`;
+
+              if (isExternal) {
+                // Gunakan tag <a> biasa untuk Perpustakaan agar memicu redirect Vercel
+                return (
+                  <a key={item.href} href={item.href} className={className}>
+                    {item.label}
+                    <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${transparent ? 'bg-white' : 'bg-blue-600'} group-hover:w-full transition-all duration-300`}></span>
+                  </a>
+                );
+              }
+
+              // Gunakan <Link> untuk menu lainnya agar tetap cepat (SPA)
+              return (
+                <Link key={item.href} href={item.href}>
+                  <a className={className}>
+                    {item.label}
+                    <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${transparent ? 'bg-white' : 'bg-blue-600'} group-hover:w-full transition-all duration-300`}></span>
+                  </a>
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Mobile Menu Button */}
