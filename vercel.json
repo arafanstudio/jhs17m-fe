@@ -8,6 +8,13 @@
       }
     }
   ],
+  "redirects": [
+    {
+      "source": "/perpustakaan",
+      "destination": "https://sites.google.com/guru.smp.belajar.id/perpustakaanesashaka/home",
+      "permanent": true
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
