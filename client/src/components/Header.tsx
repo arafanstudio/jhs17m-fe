@@ -9,6 +9,7 @@ const navItems = [
   { label: "Akademik", href: "/akademik" },
   { label: "Ekstrakurikuler", href: "/ekstrakurikuler" },
   { label: "Fasilitas", href: "/fasilitas" },
+  { label: "Perpustakaan", href: "/perpustakaan" }
 ];
 
 interface HeaderProps {
