@@ -48,12 +48,10 @@ export default function Header({ transparent = false }: HeaderProps) {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => {
-              // Cek apakah ini link perpustakaan
               const isExternal = item.href === "/perpustakaan";
               const className = `${transparent ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-blue-600'} font-medium transition-colors relative group`;
 
               if (isExternal) {
-                // Gunakan tag <a> biasa untuk Perpustakaan agar memicu redirect Vercel
                 return (
                   <a key={item.href} href={item.href} className={className}>
                     {item.label}
