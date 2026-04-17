@@ -13,6 +13,11 @@
       "source": "/perpustakaan",
       "destination": "https://sites.google.com/guru.smp.belajar.id/perpustakaanesashaka/home",
       "permanent": true
+    },
+    {
+      "source": "/pupukama",
+      "destination": "https://pupuk-ama.vercel.app/",
+      "permanent": true
     }
   ],
   "rewrites": [

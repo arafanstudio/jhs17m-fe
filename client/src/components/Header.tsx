@@ -9,7 +9,8 @@ const navItems = [
   { label: "Akademik", href: "/akademik" },
   { label: "Ekstrakurikuler", href: "/ekstrakurikuler" },
   { label: "Fasilitas", href: "/fasilitas" },
-  { label: "Perpustakaan", href: "/perpustakaan" }
+  { label: "Perpustakaan", href: "/perpustakaan" },
+  { label: "Pupuk AMA", href: "/pupukama" }
 ];
 
 interface HeaderProps {
@@ -48,7 +49,7 @@ export default function Header({ transparent = false }: HeaderProps) {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => {
-              const isExternal = item.href === "/perpustakaan";
+              const isExternal = item.href === "/perpustakaan" || item.href === "/pupukama";
               const className = `${transparent ? 'text-white hover:text-white/80' : 'text-gray-700 hover:text-blue-600'} font-medium transition-colors relative group`;
 
               if (isExternal) {

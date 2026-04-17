@@ -21,7 +21,7 @@ export default function Fasilitas() {
     {
       icon: "📚",
       name: "Perpustakaan",
-      description: "Perpustakaan modern dengan koleksi 10,000+ buku dan akses digital.",
+      description: "",
     },
     {
       icon: "🏃",
